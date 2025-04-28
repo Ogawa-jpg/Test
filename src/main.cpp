@@ -28,6 +28,13 @@ void loop() {
     }
     M5.Lcd.fillRect(x, y, a, b, TFT_RED);
   }
+  if(M5.BtnB.wasPressed()) {
+    M5.Lcd.clear();
+    if(y > 0){
+      y -= 50;
+    }
+    M5.Lcd.fillRect(x, y, a, b, TFT_RED);
+  }
   if(M5.BtnC.wasPressed()) {
     M5.Lcd.clear();
     if(x < w - a){
@@ -35,5 +42,14 @@ void loop() {
     }
     M5.Lcd.fillRect(x, y, a, b, TFT_RED);
   }
+
+
+  if(y < h-b){
+    M5.Lcd.fillRect(x, y, a, b, TFT_RED);
+    y += 2;
+    delay(20);
+    M5.Lcd.clear();
+  }
+  M5.Lcd.fillRect(x, y, a, b, TFT_RED);
 }
 
